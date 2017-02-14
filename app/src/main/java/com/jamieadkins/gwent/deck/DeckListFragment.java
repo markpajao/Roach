@@ -56,7 +56,7 @@ public class DeckListFragment extends BaseFragment<Deck> implements DecksContrac
             buttonNewDeck.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogFragment newFragment = new NewDeckDialog();
+                    DialogFragment newFragment =  NewDeckDialog.newInstance(mDecksPresenter);
                     newFragment.setTargetFragment(DeckListFragment.this, REQUEST_CODE);
                     newFragment.show(getActivity().getSupportFragmentManager(),
                             newFragment.getClass().getSimpleName());
